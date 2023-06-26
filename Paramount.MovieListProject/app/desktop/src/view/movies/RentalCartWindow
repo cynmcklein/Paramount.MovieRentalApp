@@ -1,0 +1,25 @@
+Ext.define('IrelyMovieRentalAppFinal.view.movies.RentalCartWindow', {
+    extend: 'Ext.window.Window',
+    xtype: 'rentalcartwindow',
+
+    title: 'Rental Cart',
+    layout: 'fit',
+    closeAction: 'hide',
+    width: 400,
+    height: 400,
+
+    items: [{
+        xtype: 'grid',
+        reference: 'rentalCartGrid',
+        columns: [
+            { text: 'Name', dataIndex: 'name' },
+            { text: 'Days Available', dataIndex: 'daysAvailable' },
+            { text: 'Price', dataIndex: 'price' },
+            { text: 'Genre', dataIndex: 'genre' }
+        ],
+        store: {
+            // Define rental cart store
+            type: 'movieviewstore'
+        }
+    }]
+});
